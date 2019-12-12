@@ -1,0 +1,26 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+#acc {
+  display: inline-block;
+  margin-left: 20px;
+  padding-right: 20px;
+  font-style: oblique;
+  background-color: $gray-lighter;
+  border-radius: 20px;
+}
