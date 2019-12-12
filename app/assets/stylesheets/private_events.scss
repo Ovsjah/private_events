@@ -16,14 +16,35 @@
   }
 }
 
+#name {
+  position: relative;
+  left: 10px;
+  top: 7px;
+}
+
+#new-event {
+  font-size: 0.5em;
+  display: block;
+  position: relative;
+  top: 12px;
+  &:hover {
+    color: pink;
+    text-decoration: none;
+  }
+}
+
 #acc, #signed_in {
   margin-left: 20px;
 }
 
 #acc {
+  text-align: center;
   display: inline-block;
-  padding-right: 20px;
+  padding-right: 35px;
   font-style: oblique;
   background-color: $gray-lighter;
   border-radius: 20px;
+  img {
+    float: left;
+  }
 }

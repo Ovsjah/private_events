@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
   delete '/signout' => 'sessions#destroy'
-  resources :users, only: :show
+  get '/events' => 'events#index'
+  
+  resources :users, only: :show do
+    resources :events, only: %i[new create show]
+  end
 end

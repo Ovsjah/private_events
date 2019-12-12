@@ -14,6 +14,7 @@
       <h6 id=signed_in>
         Signed in as <%= current_user.name %> | <%= link_to "Sign out", signout_path, method: :delete %>
       </h6>
+      <br>
     <% end %>
 
     <% flash.each do |message_type, message| %>

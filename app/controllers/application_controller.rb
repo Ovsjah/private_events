@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
-  def signin(user)
-    session[:user_id] = user.id
-  end
+  include SessionsHelper
 
-  def signout
-    session.delete(:user_id)
-  end
+  private
+
+    def authenticate
+      redirect_to signin_path unless signed_in?
+    end
 end
