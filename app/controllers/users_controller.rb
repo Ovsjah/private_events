@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      signin(@user)
       flash[:success] = 'Successfully signed up'
       redirect_to @user
     else

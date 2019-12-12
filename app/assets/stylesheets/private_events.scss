@@ -16,9 +16,12 @@
   }
 }
 
+#acc, #signed_in {
+  margin-left: 20px;
+}
+
 #acc {
   display: inline-block;
-  margin-left: 20px;
   padding-right: 20px;
   font-style: oblique;
   background-color: $gray-lighter;
