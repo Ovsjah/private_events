@@ -1,13 +1,5 @@
 <% provide(:title, @user.name) %>
-
-<div>
-  <h1 id="acc">
-    <%= gravatar_for @user, size: 80 %>
-    <span id='name'><%= @user.name %></span>
-    <%= link_to "Create an Event", new_user_event_path(@user), id: 'new-event' %>
-  </h1>
-</div>
-
+<%= render 'profile', object: @user %> 
 <div>
   <ul><%= render @user.events %></ul>
 </div>

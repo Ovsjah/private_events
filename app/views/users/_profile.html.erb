@@ -1,0 +1,7 @@
+<div>
+  <h1 id="acc">
+    <%= gravatar_for object, size: 80 %>
+    <span id='name'><%= object.name %></span>
+    <%= link_to "Create an Event", new_user_event_path(object), class: 'pink', id: 'new-event' %>
+  </h1>
+</div>

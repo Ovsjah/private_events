@@ -1,0 +1,18 @@
+<div class='row'>
+  <div class="col-md-6 col-md-offset-3">
+    <h1><%= yield(:h1) %></h1>
+
+    <%= form_with(scope: object, url: url, local: true) do |form| %>
+      <% unless object == :session %>
+        <%= render 'shared/errors', object: object %>
+      <% end %>
+      
+      <%= render yield(:path), form: form %>
+      <%= form.submit yield(:button), class: 'btn btn-primary' %>
+    <% end %>
+
+    <% if object == :session %>
+      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <% end %>
+  </div>
+</div>
