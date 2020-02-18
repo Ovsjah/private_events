@@ -1,2 +1,6 @@
 <% provide_all('users/form_fields', 'sign in') %>
-<%= render 'shared/form', object: :session, url: signin_path %>
+<div class='row mt-5'>
+  <div class='col-md-6 col ml-auto mr-auto'>
+    <%= render 'shared/form', object: :session, url: signin_path %>
+  </div>
+</div>

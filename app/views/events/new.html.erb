@@ -1,2 +1,2 @@
-<% provide_all('events/form_fields', 'new event') %>
-<%= render 'shared/form', object: @event, url: user_events_path %>
+<% provide_all('events/form_fields', 'create event') %>
+<%= render 'shared/form', object: @event, url: user_events_path(current_user) %>

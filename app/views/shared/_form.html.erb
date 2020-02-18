@@ -1,18 +1,26 @@
-<div class='row'>
-  <div class="col-md-6 col-md-offset-3">
-    <h1><%= yield(:h1) %></h1>
+<div class='col mt-5'>
+  <div class='card bg-light'>
+    <div class='card-body'>
+      <h2 class='card-title text-capitalize'><%= yield(:heading) %></h2>
 
-    <%= form_with(scope: object, url: url, local: true) do |form| %>
-      <% unless object == :session %>
-        <%= render 'shared/errors', object: object %>
+      <%= form_with(model: object, scope: object, url: url, local: true, class: 'form') do |form| %>
+        <% unless object == :session %>
+          <%= render 'shared/errors', object: object %>
+        <% end %>
+
+        <%= render yield(:path), form: form %>
+
+        <div class='form-group'>
+          <%= form.submit yield(:button), class: 'btn btn-primary btn-block' %>
+        </div>
       <% end %>
-      
-      <%= render yield(:path), form: form %>
-      <%= form.submit yield(:button), class: 'btn btn-primary' %>
-    <% end %>
 
-    <% if object == :session %>
-      <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-    <% end %>
+      <% if object == :session %>
+        <small>New user? <%= link_to "Sign up now!", signup_path %></small>
+      <% elsif object.is_a? User %>
+        <small>Already a user? <%= link_to "Sign in!", signin_path %></small>
+      <% end %>
+    </div>
   </div>
+
 </div>

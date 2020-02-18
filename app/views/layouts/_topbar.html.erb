@@ -1,0 +1,32 @@
+<nav class='navbar sticky-top navbar-expand-sm navbar-dark bg-primary'>
+  <%= link_to current_user, class: 'navbar-brand' do %>
+    <%= render 'users/avatar', user: current_user, size: 60 %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul data-controller="topbar" data-target="topbar.navbar" class="navbar-nav mr-auto font-weight-bold">
+      <li class="nav-item">
+        <%= link_to "Add event", new_user_event_path(current_user), class: "nav-link" %>
+      </li>
+      <li class='nav-item'>
+        <%= link_to "Attended events", attended_events_path(current_user), class: "nav-link" %>
+      </li>
+      <li class='nav-item'>
+        <%= link_to "Events", events_path, class: "nav-link" %>
+      </li>
+    </ul>
+
+    <div class="nav-item">
+      <%= link_to signout_path, method: :delete, class: 'btn btn-block text-white' do %>
+        <span class="icon-holder">
+          <i class="ti-power-off"></i>
+        </span>
+        <span class='title'>Sign out</span>
+      <% end %>
+    </div>
+  </div>
+</nav>

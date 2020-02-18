@@ -1,7 +1,26 @@
-<% provide(:title, 'Your Event') %>
-<%= render 'users/profile', object: @event.creator %>
-<div class="col-md-6 col-md-offset-3">
-  <div class='description'>
-    <%= @event.description %>
+<div class='row'>
+  <div class='col mt-4'>
+    <div class='card'>
+      <div class='card-header'>
+        <div class='row'>
+          <div class='col-md-9'>
+            <%= render 'users/avatar', user: @event.creator, size: 100 %>
+          </div>
+          <div class='col-md-3'>
+            <h3 class='card-title float-right'>
+              <i class='badge'><%= @event.date&.strftime('%_d %b %Y %H:%M') %></i>
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class='card-body'>
+        <p class="card-text"><%= @event.description %></p>
+        <h4 class='title'>
+          <% @event.attendees.each do |attendee| %>
+            <span class="badge badge-light"><%= attendee.name %></span>
+          <% end %>
+        </h4>
+      </div>
+    </div>
   </div>
 </div>

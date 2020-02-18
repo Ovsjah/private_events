@@ -1,0 +1,13 @@
+<% if upcoming.present? %>
+  <%= content_for(:heading, 'Upcoming') %>
+  <%= render 'shared/events', event: upcoming %>
+<% else %>
+  <p class='text-center text-muted mt-4'>There are no upcoming events!</p>
+<% end %>
+
+<% if past.present? %>
+  <%= content_for(:heading, 'Past', flush: true) %>
+  <%= render 'shared/events', event: past %>
+<% else %>
+  <p class='text-center text-muted mt-5'>There are no past events!</p>
+<% end %>
