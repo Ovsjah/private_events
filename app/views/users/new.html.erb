@@ -1,6 +1,8 @@
 <% provide_all('users/form_fields', 'sign up')%>
-<div class='row mt-5'>
-  <div class='col-md-6 col ml-auto mr-auto'>
-    <%= render 'shared/form', object: @user, url: signup_path %>
+<div class='container'>
+  <div class='row mt-5'>
+    <div class='col-md-7 m-auto'>
+      <%= render 'shared/form', object: @user, url: signup_path %>
+    </div>
   </div>
 </div>
