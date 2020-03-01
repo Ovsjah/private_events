@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      signin(@user)
+      signin
       redirect_to @user, flash: { success: 'Successfully signed up' }
     else
       render :new
